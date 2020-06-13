@@ -1,5 +1,6 @@
 *{
-
+padding: 0%;
+margin: 0%;
     font-family: 'Catamaran', sans-serif;
 
 }
@@ -9,28 +10,28 @@ body{
     flex-flow:row wrap;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
     width: 100vw;
     height: 100vh;
-    height: auto;
-    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) no-repeat center;
 }
 /*----------en este segmento,utilice css-Grid, para determinar los espacios prolijamente,vamos a encontrar 3 secciones,que dividen la tarjeta,-image-text y prize---------*/
 
 .card{
     background:white;
     display: grid;
-    margin: 2% 6%;
-    grid-template-columns: 300px;
-    grid-template-rows: 300px 100px 100px;
-    grid-template-areas: "card-image""card-text""card-stats";
+    margin: 1% 4%;
+    grid-template-columns:18em;
+    grid-template-rows: 18em 3em 3em;
+    grid-template-areas: "card-image""card-text""card-prize";
     border-radius: 1em;
-    box-shadow:5px 5px 30px silver ;
+    box-shadow: 50px 40px 25px -22px rgba(153,154,161,1);
 }
 
 /*----------image---------*/
 
     .card-image{
-            grid-area:"card-image";
+            grid-area:card-image;
     }
     .card-image img{
         width: 100%;
@@ -42,37 +43,42 @@ body{
 
 /*----------text---------*/
     .card-text{
-            grid-area:"card-text";
+            grid-area:card-text;
             text-align: center;
             align-self: center;
+            height: 100%;
+        }
+        .card-text p {
+            font-size: 1em;
+            text-transform: capitalize;
         }
     .card-text h3 {
-            font-size: 1.5em;
+            font-size: 1em;
+            text-transform: uppercase;
 
         }
 
 /*----------prize---------*/
 .card-prize{
-        grid-area:"card-stats";
+        grid-area:card-prize;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        text-align: center;
         align-self: center;
+        grid-template-columns: 1fr 1fr;
         border-bottom-left-radius: 1em;
         border-bottom-right-radius: 1em;
+
     }
         .card-prize h4{
-            text-align: center;
-            font-size: 1.5em;
+            font-size: 1em;
 
         }
         .card-prize i {
-            text-align: center;
-            align-self: center;
-            font-size: 1.5em;
+            font-size: 1.3em;
             transition: all 100ms;
         }
         .card-prize i:hover{
             color:aquamarine;
-            font-size: 2em;
+            font-size: 1.5em;
 
         }
